@@ -1,19 +1,5 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'package:get/get.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:intl/intl.dart' as intl;
-import 'package:loading_plus/loading_plus.dart';
-import 'package:upgrader/upgrader.dart';
-
-import '../main.dart';
-import 'theme/colors_manager.dart';
-import 'widgets/scale_text.dart';
+import 'helpers/all_imports.dart';
+import 'helpers/conflict_imports.dart';
 
 abstract class Components {
   static void snackBar({
@@ -108,7 +94,7 @@ abstract class Components {
   }
 
   static bool isRTL() {
-    return intl.Bidi.isRtlLanguage(Get.locale!.languageCode);
+    return Bidi.isRtlLanguage(Get.locale!.languageCode);
   }
 
   static bool isDark() {
@@ -261,16 +247,16 @@ abstract class Components {
     );
   }
 
-  // static String getMobileNumberWithCountryCode({
-  //   required String phone,
-  //   required String countryCode,
-  // }) {
-  //   String phoneWithoutZero = phone;
-  //   if (phoneWithoutZero[0] == '0') {
-  //     phoneWithoutZero = phoneWithoutZero.replaceFirst('0', '');
-  //   }
-  //   return '$countryCode$phoneWithoutZero';
-  // }
+// static String getMobileNumberWithCountryCode({
+//   required String phone,
+//   required String countryCode,
+// }) {
+//   String phoneWithoutZero = phone;
+//   if (phoneWithoutZero[0] == '0') {
+//     phoneWithoutZero = phoneWithoutZero.replaceFirst('0', '');
+//   }
+//   return '$countryCode$phoneWithoutZero';
+// }
 }
 
 enum SnackBarStatus {

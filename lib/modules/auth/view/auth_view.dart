@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-import 'package:upgrader/upgrader.dart';
-
-import '../../../main.dart';
-import '../../../resources/components.dart';
-import '../../../resources/enums/auth_type.dart';
-import '../../../resources/managers/assets_manager.dart';
-import '../controller/auth_controller.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class AuthView extends StatelessWidget {
   AuthView({super.key});
