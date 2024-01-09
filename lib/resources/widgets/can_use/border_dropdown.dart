@@ -33,8 +33,8 @@
 //       onChanged: onChanged,
 //       icon: Padding(
 //         padding: EdgeInsets.only(
-//           right: Components.isEnglish() ? 8.0 : 0.0,
-//           left: !Components.isEnglish() ? 8.0 : 0.0,
+//           right: Components().isEnglish() ? 8.0 : 0.0,
+//           left: !Components().isEnglish() ? 8.0 : 0.0,
 //         ),
 //         child: UnconstrainedBox(
 //           child: SvgPicture.asset(

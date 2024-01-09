@@ -54,7 +54,7 @@
 //             Align(
 //               alignment: icon == null
 //                   ? Alignment.center
-//                   : Components.isEnglish()
+//                   : Components().isEnglish()
 //                       ? Alignment.center
 //                       : Alignment.center,
 //               child: Text(
@@ -66,16 +66,16 @@
 //             ),
 //             if (icon != null)
 //               Align(
-//                 alignment: Components.isEnglish() ? Alignment.centerRight : Alignment.centerLeft,
+//                 alignment: Components().isEnglish() ? Alignment.centerRight : Alignment.centerLeft,
 //                 child: Padding(
 //                   padding: const EdgeInsets.symmetric(
 //                     vertical: 8.0,
 //                     horizontal: 16.0,
 //                   ),
 //                   child: Transform.flip(
-//                     flipY: Components.isEnglish() ? false : true,
+//                     flipY: Components().isEnglish() ? false : true,
 //                     child: RotatedBox(
-//                       quarterTurns: Components.isEnglish() ? 0 : 2,
+//                       quarterTurns: Components().isEnglish() ? 0 : 2,
 //                       child: icon,
 //                     ),
 //                   ),

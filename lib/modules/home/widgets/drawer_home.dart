@@ -174,27 +174,27 @@ class DrawerHome extends StatelessWidget {
 
   Future<void> shareApp() async {
     try {
-      Components.showLoading();
+      Components().showLoading();
       await Share.share(ConstantsManager.shareText);
     } catch (_) {
-      Components.snackBar(message: localizations.somethingWrongTryAgain);
+      Components().snackBar(message: localizations.somethingWrongTryAgain);
     } finally {
-      Components.dismissLoading();
+      Components().dismissLoading();
     }
   }
 
   Future<void> rateApp() async {
     try {
-      Components.showLoading();
+      Components().showLoading();
       final InAppReview inAppReview = InAppReview.instance;
 
       await inAppReview.openStoreListing(
         appStoreId: ConstantsManager.appStoreId,
       );
-      Components.dismissLoading();
+      Components().dismissLoading();
     } catch (_) {
-      Components.dismissLoading();
-      Components.snackBar(message: localizations.somethingWrongTryAgain);
+      Components().dismissLoading();
+      Components().snackBar(message: localizations.somethingWrongTryAgain);
     }
   }
 
@@ -266,18 +266,18 @@ class DrawerHome extends StatelessWidget {
                 if (!formKey.currentState!.validate()) return;
                 // final FeedbackRepository feedbackRepository = FeedbackApi();
                 // try {
-                //   Components.showLoading();
+                //   Components().showLoading();
                 //   await feedbackRepository
                 //       .sendFeedback(feedbackController.text.trim());
-                //   Components.dismissLoading();
+                //   Components().dismissLoading();
                 //   Get.back();
-                //   Components.snackBar(
+                //   Components().snackBar(
                 //     message: localizations.feedbackSent,
                 //     snackBarStatus: SnackBarStatus.success,
                 //   );
                 // } catch (_) {
-                //   Components.dismissLoading();
-                //   Components.snackBar(
+                //   Components().dismissLoading();
+                //   Components().snackBar(
                 //       message: localizations.somethingWrongTryAgain);
                 // }
               },
@@ -290,15 +290,15 @@ class DrawerHome extends StatelessWidget {
 
   Future<void> openTermsAndConditions() async {
     try {
-      Components.showLoading();
+      Components().showLoading();
       await launchUrl(
         Uri.parse(ConstantsManager.termsAndConditionsUrl),
         mode: LaunchMode.externalApplication,
       );
-      Components.dismissLoading();
+      Components().dismissLoading();
     } catch (_) {
-      Components.dismissLoading();
-      Components.snackBar(message: localizations.somethingWrongTryAgain);
+      Components().dismissLoading();
+      Components().snackBar(message: localizations.somethingWrongTryAgain);
     }
   }
 
@@ -334,7 +334,7 @@ class DrawerHome extends StatelessWidget {
         ),
       ),
     ];
-    Components.showAdaptiveDialog(
+    Components().showAdaptiveDialog(
       context: context,
       title: title,
       content: content,

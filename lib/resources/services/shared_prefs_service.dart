@@ -3,7 +3,9 @@ import '../helpers/all_imports.dart';
 class SharedPrefsService {
   SharedPrefsService._();
 
-  static final SharedPrefsService instance = SharedPrefsService._();
+  static final SharedPrefsService _instance = SharedPrefsService._();
+
+  factory SharedPrefsService() => _instance;
 
   Future<void> init() async {
     sharedPreferences = await SharedPreferences.getInstance();

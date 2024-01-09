@@ -3,7 +3,9 @@ import '../helpers/all_imports.dart';
 class NotificationService {
   NotificationService._();
 
-  static final NotificationService instance = NotificationService._();
+  static final NotificationService _instance = NotificationService._();
+
+  factory NotificationService() => _instance;
 
   Future<void> _initAwesomeNotifications() async {
     await AwesomeNotifications().initialize(

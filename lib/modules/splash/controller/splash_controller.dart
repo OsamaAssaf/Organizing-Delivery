@@ -10,7 +10,7 @@ class SplashController extends GetxController {
   }
 
   Future<void> checkConnection() async {
-    final bool result = await Components.checkConnection();
+    final bool result = await Components().checkConnection();
     if (result == true) {
       Get.offAllNamed(Routes.authRoute);
     } else {

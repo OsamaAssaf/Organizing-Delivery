@@ -16,7 +16,7 @@ class ExceptionManager {
 
   void showException([String? error]) {
     final Map<String, dynamic>? exception = exceptionsMap[error];
-    Components.snackBar(
+    Components().snackBar(
       message: error != null && exception != null
           ? exception['value'] ?? localizations.somethingWrongTryAgain
           : localizations.somethingWrongTryAgain,

@@ -1,8 +1,14 @@
 import 'helpers/all_imports.dart';
 import 'helpers/conflict_imports.dart';
 
-abstract class Components {
-  static void snackBar({
+class Components {
+  Components._();
+
+  static final Components _instance = Components._();
+
+  factory Components() => _instance;
+
+  void snackBar({
     required String message,
     SnackBarStatus snackBarStatus = SnackBarStatus.warning,
     Duration duration = const Duration(seconds: 3),
@@ -50,7 +56,7 @@ abstract class Components {
     );
   }
 
-  static Future<void> showAdaptiveDialog({
+  Future<void> showAdaptiveDialog({
     required BuildContext context,
     Widget? title,
     Widget? content,
@@ -75,7 +81,7 @@ abstract class Components {
     );
   }
 
-  static void showLoading() {
+  void showLoading() {
     LoadingPlus.instance.showCustom(
       child: const Center(
         child: CircularProgressIndicator(),
@@ -83,25 +89,25 @@ abstract class Components {
     );
   }
 
-  static void dismissLoading() {
+  void dismissLoading() {
     LoadingPlus.instance.dismiss();
   }
 
-  static Center loadingWidget() {
+  Center loadingWidget() {
     return const Center(
       child: CircularProgressIndicator(),
     );
   }
 
-  static bool isRTL() {
+  bool isRTL() {
     return Bidi.isRtlLanguage(Get.locale!.languageCode);
   }
 
-  static bool isDark() {
+  bool isDark() {
     return theme.colorScheme.brightness == Brightness.dark;
   }
 
-  static SystemUiOverlayStyle systemUiOverlayStyle({
+  SystemUiOverlayStyle systemUiOverlayStyle({
     Color? statusBarColor,
     Brightness? statusBarBrightness,
     Brightness? statusBarIconBrightness,
@@ -114,11 +120,11 @@ abstract class Components {
     );
   }
 
-  static Future<bool> checkConnection() {
+  Future<bool> checkConnection() {
     return InternetConnectionChecker().hasConnection;
   }
 
-  static Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
+  Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: path,
       cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
@@ -146,7 +152,7 @@ abstract class Components {
     return croppedFile;
   }
 
-  static Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
+  Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
     final TimeOfDay? time = await showTimePicker(
       context: context,
       initialTime: initialTime ?? const TimeOfDay(hour: 8, minute: 0),
@@ -195,7 +201,7 @@ abstract class Components {
     return time;
   }
 
-  static Future<DateTime?> datePicker(
+  Future<DateTime?> datePicker(
     BuildContext context, {
     DateTime? initialDate,
     DateTime? firstDate,
@@ -231,7 +237,7 @@ abstract class Components {
     return dateTime;
   }
 
-  static Upgrader upgrader() {
+  Upgrader upgrader() {
     return Upgrader(
       messages: UpgraderMessages(
         code: Get.locale!.languageCode,
@@ -247,7 +253,7 @@ abstract class Components {
     );
   }
 
-// static String getMobileNumberWithCountryCode({
+//  String getMobileNumberWithCountryCode({
 //   required String phone,
 //   required String countryCode,
 // }) {

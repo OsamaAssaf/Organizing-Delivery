@@ -63,7 +63,7 @@
 //       maxLength: maxLength,
 //       enabled: enabled,
 //       textDirection: isPhone ? TextDirection.ltr : null,
-//       textAlign: Components.isEnglish()
+//       textAlign: Components().isEnglish()
 //           ? TextAlign.start
 //           : isPhone
 //               ? TextAlign.end
@@ -106,8 +106,8 @@
 //         suffixIcon: suffixIcon != null
 //             ? Padding(
 //                 padding: EdgeInsets.only(
-//                   right: Components.isEnglish() ? 8.0 : 0.0,
-//                   left: !Components.isEnglish() ? 8.0 : 0.0,
+//                   right: Components().isEnglish() ? 8.0 : 0.0,
+//                   left: !Components().isEnglish() ? 8.0 : 0.0,
 //                 ),
 //                 child: UnconstrainedBox(
 //                   child: suffixIcon,
@@ -117,8 +117,8 @@
 //         prefixIcon: prefixIcon != null
 //             ? Padding(
 //                 padding: EdgeInsets.only(
-//                   right: Components.isEnglish() ? 8.0 : 0.0,
-//                   left: !Components.isEnglish() ? 8.0 : 0.0,
+//                   right: Components().isEnglish() ? 8.0 : 0.0,
+//                   left: !Components().isEnglish() ? 8.0 : 0.0,
 //                 ),
 //                 child: UnconstrainedBox(
 //                   child: prefixIcon,

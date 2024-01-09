@@ -53,7 +53,7 @@
 //                 Get.back();
 //               },
 //               icon: RotatedBox(
-//                 quarterTurns: !Components.isEnglish() ? 2 : 0,
+//                 quarterTurns: !Components().isEnglish() ? 2 : 0,
 //                 child: SvgPicture.asset(
 //                   IconsManager.backButtonSvg,
 //                   height: 20.0,

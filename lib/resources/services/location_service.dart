@@ -38,7 +38,7 @@ class LocationService {
                 ),
               ),
             ];
-            Components.showAdaptiveDialog(
+            Components().showAdaptiveDialog(
               context: context,
               title: title,
               content: content,
@@ -72,7 +72,7 @@ class LocationService {
               ),
             ),
           ];
-          Components.showAdaptiveDialog(
+          Components().showAdaptiveDialog(
             context: context,
             title: title,
             content: content,
@@ -104,7 +104,7 @@ class LocationService {
                 ),
               ),
             ];
-            Components.showAdaptiveDialog(
+            Components().showAdaptiveDialog(
               context: context,
               title: title,
               content: content,
