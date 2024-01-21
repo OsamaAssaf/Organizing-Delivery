@@ -237,22 +237,6 @@ class Components {
     return dateTime;
   }
 
-  Upgrader upgrader() {
-    return Upgrader(
-      messages: UpgraderMessages(
-        code: Get.locale!.languageCode,
-      ),
-      debugDisplayAlways: false,
-      debugLogging: false,
-      shouldPopScope: () => false,
-      showIgnore: false,
-      showLater: false,
-      canDismissDialog: false,
-      dialogStyle: Platform.isIOS ? UpgradeDialogStyle.cupertino : UpgradeDialogStyle.material,
-      durationUntilAlertAgain: const Duration(minutes: 1),
-    );
-  }
-
 //  String getMobileNumberWithCountryCode({
 //   required String phone,
 //   required String countryCode,

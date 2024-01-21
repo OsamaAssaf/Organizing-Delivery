@@ -8,8 +8,7 @@ class AuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.sizeOf(context).width;
-    return UpgradeAlert(
-      upgrader: Components().upgrader(),
+    return UpgradeDialog(
       child: SafeArea(
         child: Scaffold(
           resizeToAvoidBottomInset: false,

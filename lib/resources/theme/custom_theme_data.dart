@@ -50,8 +50,9 @@ class CustomThemeData extends ThemeExtension<CustomThemeData> {
 
   @override
   ThemeExtension<CustomThemeData> lerp(covariant ThemeExtension<CustomThemeData>? other, double t) {
-    if (other is! CustomThemeData) {
+    if (other is! CustomThemeData ) {
       return this;
+      
     }
     return CustomThemeData(
       white: white,
