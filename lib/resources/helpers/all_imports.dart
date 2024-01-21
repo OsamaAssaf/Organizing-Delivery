@@ -60,3 +60,4 @@ export '../widgets/main_app_bar.dart';
 export '../widgets/main_button.dart';
 export '../widgets/main_text_field.dart';
 export '../widgets/scale_text.dart';
+export '../../../resources/widgets/upgrade_dialog.dart';
