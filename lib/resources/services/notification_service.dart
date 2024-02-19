@@ -49,7 +49,7 @@ class NotificationService {
   }
 
   @pragma('vm:entry-point')
-  Future<void> _onActionReceivedMethod(ReceivedAction receivedAction) async {}
+  static Future<void> _onActionReceivedMethod(ReceivedAction receivedAction) async {}
 
   Future<void> showNotification({
     required String title,
@@ -71,9 +71,8 @@ class NotificationService {
   }
 
   Future<void> _initFirebaseMessaging() async {
-    // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    Stream<RemoteMessage> onMessageOpenedAppStream =
-        FirebaseMessaging.onMessageOpenedApp;
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+    Stream<RemoteMessage> onMessageOpenedAppStream = FirebaseMessaging.onMessageOpenedApp;
     onMessageOpenedAppStream.listen((RemoteMessage event) async {});
 
     Stream<RemoteMessage> onMessageStream = FirebaseMessaging.onMessage;
@@ -88,12 +87,10 @@ class NotificationService {
     );
   }
 
-  Future<void> _firebaseMessagingBackgroundHandler(
-      RemoteMessage message) async {}
+  static Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {}
 
   Future<RemoteMessage?> getInitialMessage() async {
-    RemoteMessage? message =
-        await FirebaseMessaging.instance.getInitialMessage();
+    RemoteMessage? message = await FirebaseMessaging.instance.getInitialMessage();
     return message;
   }
 

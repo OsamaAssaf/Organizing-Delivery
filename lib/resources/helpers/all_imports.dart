@@ -47,6 +47,7 @@ export '../../resources/services/notification_service.dart';
 export '../../resources/services/shared_prefs_service.dart';
 export '../../resources/theme/custom_theme_data.dart';
 export '../../resources/theme/theme_manager.dart';
+export '../../resources/services/firebase_service.dart';
 export '../components.dart';
 export '../enums/auth_type.dart';
 export '../managers/assets_manager.dart';

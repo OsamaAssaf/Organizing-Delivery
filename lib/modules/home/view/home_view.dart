@@ -1,7 +1,3 @@
-import 'dart:developer';
-
-import 'package:rive/rive.dart';
-import 'package:start_up_workspace/models/nav_item_model.dart';
 import 'package:start_up_workspace/resources/widgets/bottom_vav_bar.dart';
 import '../../../resources/helpers/all_imports.dart';
 
@@ -128,5 +124,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
-

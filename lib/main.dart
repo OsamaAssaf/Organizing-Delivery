@@ -11,6 +11,10 @@ late PackageInfo packageInfo;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  /// TODO: remove the comment when config Firebase
+  // await FirebaseService().init();
+  // FirebaseService().initCrashlytics();
   await Future.wait(
     [
       dotenv.load(),
