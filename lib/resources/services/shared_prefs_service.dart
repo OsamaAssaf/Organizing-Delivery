@@ -13,7 +13,7 @@ class SharedPrefsService {
 
   Future<void> saveUserModel(UserModel value) async {
     final String userData = jsonEncode(value.toJson());
-    final String encryptedUserData = await EncryptionService.instance.encrypt(userData);
+    final String encryptedUserData = await EncryptionService().encrypt(userData);
     await sharedPreferences.setString(
       DotenvManager.userModelPrefsKey,
       encryptedUserData,
@@ -23,7 +23,7 @@ class SharedPrefsService {
   Future<UserModel?> getUserModel() async {
     final String? encryptedUserData = sharedPreferences.getString(DotenvManager.userModelPrefsKey);
     if (encryptedUserData == null) return null;
-    final String userData = await EncryptionService.instance.decrypt(encryptedUserData);
+    final String userData = await EncryptionService().decrypt(encryptedUserData);
     return UserModel.fromJson(
       jsonDecode(userData),
     );

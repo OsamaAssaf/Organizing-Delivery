@@ -1,5 +1,4 @@
 import '../helpers/all_imports.dart';
-import '../helpers/conflict_imports.dart';
 
 class UpgradeDialog extends StatelessWidget {
   const UpgradeDialog({

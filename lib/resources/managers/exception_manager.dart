@@ -3,10 +3,11 @@ import '../helpers/all_imports.dart';
 class ExceptionManager {
   ExceptionManager._();
 
-  static final ExceptionManager instance = ExceptionManager._();
+  static final ExceptionManager _instance = ExceptionManager._();
+  factory ExceptionManager() => _instance;
 
-  static const Duration timedOutDuration = Duration(seconds: 15);
-  static const String timedOutException = 'timedOut';
+  Duration timedOutDuration = const Duration(seconds: 15);
+  static String timedOutException = 'timedOut';
 
   final Map<String, dynamic> exceptionsMap = {
     timedOutException: {

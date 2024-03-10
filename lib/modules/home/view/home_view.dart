@@ -1,9 +1,7 @@
 import 'package:start_up_workspace/resources/widgets/bottom_vav_bar.dart';
 import '../../../resources/helpers/all_imports.dart';
 
-// ignore: must_be_immutable
 class HomeView extends StatelessWidget {
-  // int index2 = 0;
   HomeView({super.key});
 
   final HomeController homeController = Get.find();

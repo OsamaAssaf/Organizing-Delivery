@@ -1,76 +1,81 @@
 import '../resources/helpers/all_imports.dart';
-import '../resources/helpers/conflict_imports.dart' as http;
+import 'package:http/http.dart' as http;
 
 class ApiServices {
-  static Future<http.Response> get(String endPoint) async {
+  ApiServices._();
+
+  static final _instance = ApiServices._();
+  factory ApiServices() => _instance;
+
+  Future<http.Response> get(String endPoint) async {
     final String url = '${DotenvManager.apiPath}/$endPoint';
-    http.Response response = await http
+    final http.Response response = await http
         .get(
       Uri.parse(url),
     )
         .timeout(
-      ExceptionManager.timedOutDuration,
+      ExceptionManager().timedOutDuration,
       onTimeout: () {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 
-  static Future<http.Response> post({
+  Future<http.Response> post({
     required String endPoint,
     required String body,
   }) async {
     final String url = '${DotenvManager.apiPath}/$endPoint';
-    http.Response response = await http
+    final http.Response response = await http
         .post(
       Uri.parse(url),
       body: body,
     )
         .timeout(
-      ExceptionManager.timedOutDuration,
+      ExceptionManager().timedOutDuration,
       onTimeout: () {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 
-  static Future<http.Response> put({
+  Future<http.Response> put({
     required String endPoint,
     required body,
   }) async {
     final String url = '${DotenvManager.apiPath}/$endPoint';
-    http.Response response = await http
+    final http.Response response = await http
         .put(
       Uri.parse(url),
       body: body,
     )
         .timeout(
-      ExceptionManager.timedOutDuration,
+      ExceptionManager().timedOutDuration,
       onTimeout: () {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 
-  static Future<http.Response> delete(String endPoint) async {
+  Future<http.Response> delete(String endPoint) async {
     final String url = '${DotenvManager.apiPath}/$endPoint';
-    http.Response response = await http
+    final http.Response response = await http
         .delete(
       Uri.parse(url),
     )
         .timeout(
-      ExceptionManager.timedOutDuration,
+      ExceptionManager().timedOutDuration,
       onTimeout: () {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 }

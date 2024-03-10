@@ -4,15 +4,16 @@ export 'dart:convert';
 export 'package:flutter/material.dart';
 export 'package:flutter/scheduler.dart';
 export 'package:flutter/services.dart';
+export 'package:get/get.dart';
+export 'package:flutter/cupertino.dart' show CupertinoAlertDialog;
+export 'dart:io' hide HeaderValue;
 
 export 'package:awesome_notifications/awesome_notifications.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:flutter_dotenv/flutter_dotenv.dart';
 export 'package:flutter_gen/gen_l10n/app_localizations.dart';
 export 'package:flutter_svg/flutter_svg.dart';
-export 'package:geolocator/geolocator.dart';
-export 'package:get/get.dart';
-export 'package:image_cropper/image_cropper.dart';
+
 export 'package:in_app_review/in_app_review.dart';
 export 'package:internet_connection_checker/internet_connection_checker.dart';
 export 'package:loading_plus/loading_plus.dart';
@@ -21,6 +22,7 @@ export 'package:share_plus/share_plus.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:upgrader/upgrader.dart' hide ambiguate;
 export 'package:url_launcher/url_launcher.dart';
+export 'package:intl/intl.dart' hide TextDirection;
 
 export '../../main.dart';
 export '../../models/user_model.dart';

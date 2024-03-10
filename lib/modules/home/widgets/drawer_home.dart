@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import '../../../resources/helpers/all_imports.dart';
-import '../../../resources/helpers/conflict_imports.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({super.key});
@@ -240,7 +241,7 @@ class DrawerHome extends StatelessWidget {
                   minLines: 1,
                   maxLines: 5,
                   hint: localizations.writeHere,
-                  validator: ValidatorsManager.validateNotEmpty,
+                  validator: ValidatorsManager().validateNotEmpty,
                 ),
               ),
               const SizedBox(height: 8.0),

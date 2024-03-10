@@ -1,5 +1,4 @@
 import 'helpers/all_imports.dart';
-import 'helpers/conflict_imports.dart';
 
 class Components {
   Components._();
@@ -124,33 +123,33 @@ class Components {
     return InternetConnectionChecker().hasConnection;
   }
 
-  Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
-    CroppedFile? croppedFile = await ImageCropper().cropImage(
-      sourcePath: path,
-      cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
-      compressQuality: 100,
-      compressFormat: isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
-      aspectRatio: isLogo
-          ? const CropAspectRatio(ratioX: 1, ratioY: 1)
-          : const CropAspectRatio(ratioX: 16, ratioY: 9),
-      uiSettings: [
-        AndroidUiSettings(
-          toolbarTitle: localizations.chooseHowImageWillDisplayed,
-          toolbarColor: theme.colorScheme.primary,
-          toolbarWidgetColor: customTheme.white,
-          lockAspectRatio: true,
-        ),
-        IOSUiSettings(
-          title: localizations.chooseHowImageWillDisplayed,
-          aspectRatioLockEnabled: true,
-          resetAspectRatioEnabled: false,
-          aspectRatioPickerButtonHidden: true,
-          resetButtonHidden: true,
-        ),
-      ],
-    );
-    return croppedFile;
-  }
+  // Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
+  //   CroppedFile? croppedFile = await ImageCropper().cropImage(
+  //     sourcePath: path,
+  //     cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
+  //     compressQuality: 100,
+  //     compressFormat: isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
+  //     aspectRatio: isLogo
+  //         ? const CropAspectRatio(ratioX: 1, ratioY: 1)
+  //         : const CropAspectRatio(ratioX: 16, ratioY: 9),
+  //     uiSettings: [
+  //       AndroidUiSettings(
+  //         toolbarTitle: localizations.chooseHowImageWillDisplayed,
+  //         toolbarColor: theme.colorScheme.primary,
+  //         toolbarWidgetColor: customTheme.white,
+  //         lockAspectRatio: true,
+  //       ),
+  //       IOSUiSettings(
+  //         title: localizations.chooseHowImageWillDisplayed,
+  //         aspectRatioLockEnabled: true,
+  //         resetAspectRatioEnabled: false,
+  //         aspectRatioPickerButtonHidden: true,
+  //         resetButtonHidden: true,
+  //       ),
+  //     ],
+  //   );
+  //   return croppedFile;
+  // }
 
   Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
     final TimeOfDay? time = await showTimePicker(
