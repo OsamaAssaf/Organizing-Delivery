@@ -21,7 +21,9 @@ Future<void> main() async {
       SharedPrefsService().init(),
       MasterFunctionsService().initPackageInfo(),
       MasterFunctionsService().initPreferredOrientations(),
-      NotificationService().initNotifications(),
+
+      /// TODO: remove the comment when config Firebase
+      // NotificationService().initNotifications(),
     ],
   );
   LoadingPlus.instance.init(navigatorKey);
