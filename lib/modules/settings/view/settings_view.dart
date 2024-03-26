@@ -10,6 +10,7 @@ class SettingsView extends StatelessWidget {
     return Scaffold(
       appBar: MainAppBar(
         title: localizations.settings,
+        canBack: true,
       ),
       body: ListView(
         physics: const ClampingScrollPhysics(),

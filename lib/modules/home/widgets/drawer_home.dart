@@ -75,7 +75,14 @@ class DrawerHome extends StatelessWidget {
                   color: customTheme.black,
                 ),
                 onTap: () {
-                  // Get.toNamed(Routes.aboutUsRoute);
+                  showAboutDialog(
+                    context: context,
+                    applicationIcon: Image.asset(
+                      IconsManager.appIcon,
+                      width: 32.0,
+                      height: 32.0,
+                    ),
+                  );
                 },
               ),
               ListTile(
@@ -147,7 +154,7 @@ class DrawerHome extends StatelessWidget {
                   color: customTheme.black,
                 ),
                 onTap: () {
-                  // Get.toNamed(Routes.settingRoute);
+                  Get.toNamed(Routes.settingsRoute);
                 },
               ),
               ListTile(
@@ -249,6 +256,12 @@ class DrawerHome extends StatelessWidget {
           ),
           actionsAlignment: MainAxisAlignment.center,
           actions: [
+            TextButton(
+              onPressed: () {
+                Get.back();
+              },
+              child: Text(localizations.cancel),
+            ),
             OutlinedButton(
               style: OutlinedButton.styleFrom(
                 shape: RoundedRectangleBorder(

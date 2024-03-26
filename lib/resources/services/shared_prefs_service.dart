@@ -57,12 +57,12 @@ class SharedPrefsService {
             ? ThemeMode.light
             : ThemeMode.system;
   }
-
-  Future<void> saveIsFirstTime(bool value) async {
-    await sharedPreferences.setBool(DotenvManager.isFirstTimePrefsKey, value);
-  }
-
-  bool getIsFirstTime() {
-    return sharedPreferences.getBool(DotenvManager.isFirstTimePrefsKey) ?? true;
-  }
+  //
+  // Future<void> saveIsFirstTime(bool value) async {
+  //   await sharedPreferences.setBool(DotenvManager.isFirstTimePrefsKey, value);
+  // }
+  //
+  // bool getIsFirstTime() {
+  //   return sharedPreferences.getBool(DotenvManager.isFirstTimePrefsKey) ?? true;
+  // }
 }

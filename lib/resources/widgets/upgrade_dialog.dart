@@ -22,8 +22,10 @@ class UpgradeDialog extends StatelessWidget {
       shouldPopScope: () => false,
       showIgnore: false,
       showLater: false,
-      canDismissDialog: false,
-      dialogStyle: Platform.isIOS ? UpgradeDialogStyle.cupertino : UpgradeDialogStyle.material,
+      barrierDismissible: false,
+      dialogStyle: Platform.isIOS
+          ? UpgradeDialogStyle.cupertino
+          : UpgradeDialogStyle.material,
       child: child,
     );
   }
