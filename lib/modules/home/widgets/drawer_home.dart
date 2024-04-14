@@ -77,6 +77,7 @@ class DrawerHome extends StatelessWidget {
                 onTap: () {
                   showAboutDialog(
                     context: context,
+                    applicationVersion: packageInfo.version,
                     applicationIcon: Image.asset(
                       IconsManager.appIcon,
                       width: 32.0,
