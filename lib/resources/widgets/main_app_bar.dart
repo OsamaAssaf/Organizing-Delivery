@@ -5,11 +5,13 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.title,
     this.canBack = false,
+    this.hasDrawer = false,
     this.actions,
   });
 
   final String title;
   final bool canBack;
+  final bool hasDrawer;
   final List<Widget>? actions;
 
   @override
@@ -45,7 +47,15 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             )
-          : null,
+          : hasDrawer
+              ? IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                )
+              : null,
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1.0),
         child: Container(

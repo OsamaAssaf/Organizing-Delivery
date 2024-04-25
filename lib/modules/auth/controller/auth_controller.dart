@@ -9,6 +9,6 @@ class AuthController extends GetxController {
   }
 
   Future<void> submit() async {
-    Get.offAllNamed(Routes.homeRoute);
+    Get.offAllNamed(Routes.navigationRoute);
   }
 }

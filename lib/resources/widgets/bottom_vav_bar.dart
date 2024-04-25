@@ -32,35 +32,45 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   List<NavItemModel> bottonNavItem = [
     NavItemModel(
-        title: 'Chat',
-        rive: RiveModel(
-            src: 'assets/images/icon.riv',
-            artboard: 'CHAT',
-            statMachinName: 'CHAT_Interactivity')),
+      title: 'Chat',
+      rive: RiveModel(
+        src: 'assets/images/icon.riv',
+        artboard: 'CHAT',
+        statMachinName: 'CHAT_Interactivity',
+      ),
+    ),
     NavItemModel(
-        title: 'Search',
-        rive: RiveModel(
-            src: 'assets/images/icon.riv',
-            artboard: 'SEARCH',
-            statMachinName: 'SEARCH_Interactivity')),
+      title: 'Search',
+      rive: RiveModel(
+        src: 'assets/images/icon.riv',
+        artboard: 'SEARCH',
+        statMachinName: 'SEARCH_Interactivity',
+      ),
+    ),
     NavItemModel(
-        title: 'Timer',
-        rive: RiveModel(
-            src: 'assets/images/icon.riv',
-            artboard: 'TIMER',
-            statMachinName: 'TIMER_Interactivity')),
+      title: 'Timer',
+      rive: RiveModel(
+        src: 'assets/images/icon.riv',
+        artboard: 'TIMER',
+        statMachinName: 'TIMER_Interactivity',
+      ),
+    ),
     NavItemModel(
-        title: 'Notifiction',
-        rive: RiveModel(
-            src: 'assets/images/icon.riv',
-            artboard: 'BELL',
-            statMachinName: 'BELL_Interactivity')),
+      title: 'Notifiction',
+      rive: RiveModel(
+        src: 'assets/images/icon.riv',
+        artboard: 'BELL',
+        statMachinName: 'BELL_Interactivity',
+      ),
+    ),
     NavItemModel(
-        title: 'Profile',
-        rive: RiveModel(
-            src: 'assets/images/icon.riv',
-            artboard: 'USER',
-            statMachinName: 'USER_Interactivity')),
+      title: 'Profile',
+      rive: RiveModel(
+        src: 'assets/images/icon.riv',
+        artboard: 'USER',
+        statMachinName: 'USER_Interactivity',
+      ),
+    ),
   ];
 
   @override
@@ -111,12 +121,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         artboard: bottonNavItem[index].rive.artboard,
                         onInit: (artboard) {
                           StateMachineController? stateMachineController =
-                              StateMachineController.fromArtboard(artboard,
-                                  bottonNavItem[index].rive.statMachinName);
+                              StateMachineController.fromArtboard(
+                                  artboard, bottonNavItem[index].rive.statMachinName);
                           artboard.addController(stateMachineController!);
                           stateMachineControllers.add(stateMachineController);
-                          riveIconInput.add(stateMachineController
-                              .findInput<bool>('active') as SMIBool);
+                          riveIconInput
+                              .add(stateMachineController.findInput<bool>('active') as SMIBool);
                         },
                       ),
                     ),
@@ -142,8 +152,7 @@ class _AnimatedBar extends StatelessWidget {
       height: 4,
       width: isActive ? 20 : 0,
       decoration: BoxDecoration(
-          color: theme.colorScheme.background,
-          borderRadius: BorderRadius.circular(12)),
+          color: theme.colorScheme.background, borderRadius: BorderRadius.circular(12)),
     );
   }
 }

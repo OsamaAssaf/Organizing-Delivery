@@ -4,6 +4,7 @@ class Routes {
   static const String unDefinedRoute = '/NotFoundView';
   static const String splashRoute = '/SplashView';
   static const String authRoute = '/AuthView';
+  static const String navigationRoute = '/NavigationView';
   static const String homeRoute = '/HomeView';
   static const String connectionErrorRoute = '/ConnectionErrorView';
   static const String settingsRoute = '/SettingsView';
@@ -23,9 +24,13 @@ class RouteGenerator {
         binding: AuthBinding(),
       ),
       GetPage(
+        name: Routes.navigationRoute,
+        page: () => const NavigationView(),
+        binding: NavigationBinding(),
+      ),
+      GetPage(
         name: Routes.homeRoute,
         page: () => HomeView(),
-        binding: HomeBinding(),
       ),
       GetPage(
         name: Routes.connectionErrorRoute,
