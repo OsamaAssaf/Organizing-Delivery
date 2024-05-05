@@ -126,7 +126,9 @@ class DrawerHome extends StatelessWidget {
                   Icons.feedback_outlined,
                   color: customTheme.black,
                 ),
-                onTap: sendFeedback,
+                onTap: () {
+                  sendFeedback(context);
+                },
               ),
               ListTile(
                 title: Text(
@@ -207,99 +209,86 @@ class DrawerHome extends StatelessWidget {
     }
   }
 
-  Future<void> sendFeedback() async {
+  Future<void> sendFeedback(BuildContext context) async {
     final TextEditingController feedbackController = TextEditingController();
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    Get.dialog(
-      BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
-        child: AlertDialog(
-          backgroundColor: theme.colorScheme.background,
-          surfaceTintColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          titlePadding: const EdgeInsets.only(top: 8.0),
-          insetPadding: const EdgeInsets.all(8.0),
-          title: Image.asset(
-            IconsManager.appIcon,
-            height: 70.0,
-            width: 70.0,
-            fit: BoxFit.contain,
-          ),
-          contentPadding: const EdgeInsets.all(8.0),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SizedBox(height: 8.0),
-              Center(
-                child: Text(
-                  localizations.sendYourFeedback,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16.0),
-              Form(
-                key: formKey,
-                child: MainTextField(
-                  controller: feedbackController,
-                  minLines: 1,
-                  maxLines: 5,
-                  hint: localizations.writeHere,
-                  validator: ValidatorsManager().validateNotEmpty,
-                ),
-              ),
-              const SizedBox(height: 8.0),
-            ],
-          ),
-          actionsAlignment: MainAxisAlignment.center,
-          actions: [
-            TextButton(
-              onPressed: () {
-                Get.back();
-              },
-              child: Text(localizations.cancel),
-            ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                side: BorderSide(
-                  color: theme.colorScheme.primary,
-                  width: 1.0,
-                ),
-              ),
-              child: Text(
-                localizations.send,
-                style: theme.textTheme.titleLarge,
-              ),
-              onPressed: () async {
-                if (!formKey.currentState!.validate()) return;
-                // final FeedbackRepository feedbackRepository = FeedbackApi();
-                // try {
-                //   Components().showLoading();
-                //   await feedbackRepository
-                //       .sendFeedback(feedbackController.text.trim());
-                //   Components().dismissLoading();
-                //   Get.back();
-                //   Components().snackBar(
-                //     message: localizations.feedbackSent,
-                //     snackBarStatus: SnackBarStatus.success,
-                //   );
-                // } catch (_) {
-                //   Components().dismissLoading();
-                //   Components().snackBar(
-                //       message: localizations.somethingWrongTryAgain);
-                // }
-              },
-            ),
-          ],
-        ),
+    Components().showAdaptiveDialog(
+      context: context,
+      title: Image.asset(
+        IconsManager.appIcon,
+        height: 70.0,
+        width: 70.0,
+        fit: BoxFit.contain,
       ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const SizedBox(height: 8.0),
+          Center(
+            child: Text(
+              localizations.sendYourFeedback,
+              style: theme.textTheme.titleLarge!.copyWith(
+                color: customTheme.black,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16.0),
+          Form(
+            key: formKey,
+            child: MainTextField(
+              controller: feedbackController,
+              minLines: 1,
+              maxLines: 5,
+              hint: localizations.writeHere,
+              validator: ValidatorsManager().validateNotEmpty,
+            ),
+          ),
+          const SizedBox(height: 8.0),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Get.back();
+          },
+          child: Text(localizations.cancel),
+        ),
+        OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            side: BorderSide(
+              color: theme.colorScheme.primary,
+              width: 1.0,
+            ),
+          ),
+          child: Text(
+            localizations.send,
+            style: theme.textTheme.titleLarge,
+          ),
+          onPressed: () async {
+            if (!formKey.currentState!.validate()) return;
+            // final FeedbackRepository feedbackRepository = FeedbackApi();
+            // try {
+            //   Components().showLoading();
+            //   await feedbackRepository
+            //       .sendFeedback(feedbackController.text.trim());
+            //   Components().dismissLoading();
+            //   Get.back();
+            //   Components().snackBar(
+            //     message: localizations.feedbackSent,
+            //     snackBarStatus: SnackBarStatus.success,
+            //   );
+            // } catch (_) {
+            //   Components().dismissLoading();
+            //   Components().snackBar(
+            //       message: localizations.somethingWrongTryAgain);
+            // }
+          },
+        ),
+      ],
     );
   }
 
