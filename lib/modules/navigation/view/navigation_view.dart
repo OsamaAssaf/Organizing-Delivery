@@ -1,5 +1,4 @@
 import '../../../resources/helpers/all_imports.dart';
-import '../../../resources/widgets/bottom_vav_bar.dart';
 
 class NavigationView extends StatelessWidget {
   const NavigationView({super.key});
