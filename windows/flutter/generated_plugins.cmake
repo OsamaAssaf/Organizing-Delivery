@@ -5,7 +5,6 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   awesome_notifications
   firebase_core
-  rive_common
   share_plus
   url_launcher_windows
 )

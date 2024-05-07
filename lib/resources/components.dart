@@ -80,16 +80,18 @@ class Components {
     );
   }
 
-  void showLoading() {
-    LoadingPlus.instance.showCustom(
-      child: const Center(
-        child: CircularProgressIndicator(),
-      ),
+  Widget customLoadingItem() {
+    return const Center(
+      child: CircularProgressIndicator.adaptive(),
     );
   }
 
+  void showLoading() {
+    LoadingPlusController().show();
+  }
+
   void dismissLoading() {
-    LoadingPlus.instance.dismiss();
+    LoadingPlusController().dismiss();
   }
 
   Center loadingWidget() {

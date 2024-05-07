@@ -26,7 +26,7 @@ Future<void> main() async {
       // NotificationService().initNotifications(),
     ],
   );
-  LoadingPlus.instance.init(navigatorKey);
+  // LoadingPlus.instance.init(navigatorKey);
   MasterFunctionsService().initSystemUiStyle();
   runApp(const MyApp());
 }
@@ -66,7 +66,10 @@ class _MyAppState extends State<MyApp> {
       builder: (BuildContext context, Widget? child) {
         theme = Theme.of(context);
         customTheme = theme.extension<CustomThemeData>()!;
-        return child!;
+        return LoadingPlus(
+          loadingWidget: Components().customLoadingItem(),
+          child: child!,
+        );
       },
       initialRoute: Routes.splashRoute,
       getPages: RouteGenerator.getPages(),

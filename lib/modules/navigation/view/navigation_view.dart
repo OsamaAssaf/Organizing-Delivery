@@ -10,12 +10,12 @@ class NavigationView extends StatelessWidget {
       child: GetBuilder<NavigationController>(builder: (controller) {
         return Scaffold(
           body: controller.getPage(),
-          bottomNavigationBar: BottomNavBar(
-            onTap: (int index) {
-              controller.changeIndex(index);
-            },
-            selectedNavIndex: controller.selectedNavIndex,
-          ),
+          // bottomNavigationBar: BottomNavBar(
+          //   onTap: (int index) {
+          //     controller.changeIndex(index);
+          //   },
+          //   selectedNavIndex: controller.selectedNavIndex,
+          // ),
         );
       }),
     );

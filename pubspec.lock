@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.3+1"
+  back_button_interceptor:
+    dependency: transitive
+    description:
+      name: back_button_interceptor
+      sha256: "8354b03320043db546e3f446af171faaa71384100486444113628f7db1e7fe9b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.3"
   boolean_selector:
     dependency: transitive
     description:
@@ -357,14 +365,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
-  graphs:
-    dependency: transitive
-    description:
-      name: graphs
-      sha256: aedc5a15e78fc65a6e23bcd927f24c64dd995062bcd1ca6eda65a3cff92a4d19
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.1"
   html:
     dependency: transitive
     description:
@@ -489,10 +489,10 @@ packages:
     dependency: "direct main"
     description:
       name: loading_plus
-      sha256: "0602cc7cda1a29e5a44bc0d91c287d98dfd7e4d045aca6e2219873c2a58b3c4c"
+      sha256: "8216e982768525a8b2b78255d9aa1d8e405a4d4ead7a686f7d76565d846c3ffd"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.0"
+    version: "2.0.2"
   matcher:
     dependency: transitive
     description:
@@ -537,10 +537,10 @@ packages:
     dependency: "direct main"
     description:
       name: package_info_plus
-      sha256: "2c582551839386fa7ddbc7770658be7c0f87f388a4bff72066478f597c34d17f"
+      sha256: b93d8b4d624b4ea19b0a5a208b2d6eff06004bc3ce74c06040b120eeadd00ce0
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.0"
+    version: "8.0.0"
   package_info_plus_platform_interface:
     dependency: transitive
     description:
@@ -645,22 +645,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.7.4"
-  rive:
-    dependency: "direct main"
-    description:
-      name: rive
-      sha256: "95690a0fb4f6e195c53b217ab3cc0e0b0f443c670adbdee9d57d636a36b82b18"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.13.2"
-  rive_common:
-    dependency: transitive
-    description:
-      name: rive_common
-      sha256: "3eee68fcab3e0882090cea5a8cf7acea7967f469a34a2580322575603b094435"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.5"
   share_plus:
     dependency: "direct main"
     description:
@@ -822,10 +806,10 @@ packages:
     dependency: "direct main"
     description:
       name: upgrader
-      sha256: "3716b5a697bbdc80c2365d500bb072e0087fbb15b14316a4869353fe8f261822"
+      sha256: d45483694620883107c2f5ca1dff7cdd4237b16810337a9c9c234203eb79eb5f
       url: "https://pub.dev"
     source: hosted
-    version: "10.2.0"
+    version: "10.3.0"
   url_launcher:
     dependency: "direct main"
     description:
