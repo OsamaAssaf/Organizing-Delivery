@@ -1,4 +1,4 @@
-import 'package:start_up_workspace/models/user_model.dart';
+import 'helpers/all_imports.dart';
 
 class Globals {
   Globals._();

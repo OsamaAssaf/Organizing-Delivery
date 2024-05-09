@@ -24,7 +24,7 @@ dependencies:
   share_plus: ^9.0.0
   loading_plus: ^2.0.2
   awesome_notifications: ^0.9.3+1
-  firebase_messaging: ^14.9.1
+  firebase_messaging: ^14.9.2
   package_info_plus: ^8.0.0
   internet_connection_checker: ^1.0.0+1
   upgrader: ^10.3.0
@@ -32,8 +32,8 @@ dependencies:
   encrypt: ^5.0.3
   flutter_svg: ^2.0.10+1
   url_launcher: ^6.2.6
-  firebase_crashlytics: ^3.5.4
-  firebase_analytics: ^10.10.4
+  firebase_crashlytics: ^3.5.5
+  firebase_analytics: ^10.10.5
   #  rive: ^0.13.3
   #  cached_network_image: ^3.3.1
   #  transparent_image: ^2.0.1
