@@ -26,7 +26,6 @@ Future<void> main() async {
       // NotificationService().initNotifications(),
     ],
   );
-  // LoadingPlus.instance.init(navigatorKey);
   MasterFunctionsService().initSystemUiStyle();
   runApp(const MyApp());
 }
