@@ -24,7 +24,7 @@ class SwitchItem extends StatelessWidget {
       ),
       secondary: leading,
       onChanged: onChanged,
-      activeColor: theme.colorScheme.background,
+      activeColor: theme.colorScheme.surface,
       inactiveThumbColor: theme.colorScheme.primary,
       activeTrackColor: theme.colorScheme.primary,
       inactiveTrackColor: theme.disabledColor,

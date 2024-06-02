@@ -172,7 +172,7 @@ class Components {
                     ),
                   ),
                   timePickerTheme: TimePickerThemeData(
-                    backgroundColor: theme.colorScheme.background,
+                    backgroundColor: theme.colorScheme.surface,
                     helpTextStyle: TextStyle(
                       color: theme.colorScheme.primary,
                     ),
@@ -189,7 +189,7 @@ class Components {
                     ),
                   ),
                   timePickerTheme: TimePickerThemeData(
-                    backgroundColor: theme.colorScheme.background,
+                    backgroundColor: theme.colorScheme.surface,
                     helpTextStyle: TextStyle(
                       color: theme.colorScheme.primary,
                     ),

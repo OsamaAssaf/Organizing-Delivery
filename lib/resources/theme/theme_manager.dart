@@ -7,7 +7,7 @@ class ThemeManager {
       fontFamily: FontsManager.fontFamily,
       fontFamilyFallback: FontsManager.fontFamilyFallback,
       colorScheme: ColorScheme.fromSwatch().copyWith(
-        background: ColorsManager.background,
+        surface: ColorsManager.background,
         primary: ColorsManager.primary,
         secondary: ColorsManager.secondary,
         brightness: Brightness.light,
@@ -61,8 +61,8 @@ class ThemeManager {
         ),
       ),
       checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateProperty.all<Color>(ColorsManager.primary),
-        checkColor: MaterialStateProperty.all<Color>(ColorsManager.lightGrey),
+        fillColor: WidgetStateProperty.all<Color>(ColorsManager.primary),
+        checkColor: WidgetStateProperty.all<Color>(ColorsManager.lightGrey),
         side: BorderSide(
           color: ColorsManager.lightGrey,
         ),

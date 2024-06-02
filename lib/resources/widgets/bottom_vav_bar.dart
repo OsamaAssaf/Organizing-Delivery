@@ -152,7 +152,7 @@
 //       height: 4,
 //       width: isActive ? 20 : 0,
 //       decoration: BoxDecoration(
-//           color: theme.colorScheme.background, borderRadius: BorderRadius.circular(12)),
+//           color: theme.colorScheme.surface, borderRadius: BorderRadius.circular(12)),
 //     );
 //   }
 // }

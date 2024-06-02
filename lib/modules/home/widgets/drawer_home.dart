@@ -11,13 +11,13 @@ class DrawerHome extends StatelessWidget {
       filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
       child: Drawer(
         surfaceTintColor: Colors.transparent,
-        backgroundColor: theme.colorScheme.background,
+        backgroundColor: theme.colorScheme.surface,
         width: 260.0,
         child: SingleChildScrollView(
           child: Column(
             children: [
               UserAccountsDrawerHeader(
-                arrowColor: theme.colorScheme.background,
+                arrowColor: theme.colorScheme.surface,
                 decoration: BoxDecoration(
                   color: theme.colorScheme.primary,
                 ),
@@ -29,7 +29,7 @@ class DrawerHome extends StatelessWidget {
                   child: Text(
                     'User Name',
                     style: theme.textTheme.titleLarge!.copyWith(
-                      color: theme.colorScheme.background,
+                      color: theme.colorScheme.surface,
                     ),
                   ),
                 ),
@@ -40,7 +40,7 @@ class DrawerHome extends StatelessWidget {
                   child: Text(
                     'user@example.com',
                     style: theme.textTheme.titleMedium!.copyWith(
-                      color: theme.colorScheme.background,
+                      color: theme.colorScheme.surface,
                     ),
                   ),
                 ),
@@ -50,7 +50,7 @@ class DrawerHome extends StatelessWidget {
                   },
                   child: CircleAvatar(
                     radius: 35,
-                    backgroundColor: theme.colorScheme.background,
+                    backgroundColor: theme.colorScheme.surface,
                     child: CircleAvatar(
                       backgroundColor: theme.colorScheme.primary,
                       radius: 34,

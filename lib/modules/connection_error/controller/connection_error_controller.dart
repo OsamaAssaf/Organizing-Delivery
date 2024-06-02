@@ -14,7 +14,7 @@ class ConnectionErrorController extends GetxController {
               height: 280.0,
               padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: theme.colorScheme.background,
+                color: theme.colorScheme.surface,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(36.0),
                   topRight: Radius.circular(36.0),

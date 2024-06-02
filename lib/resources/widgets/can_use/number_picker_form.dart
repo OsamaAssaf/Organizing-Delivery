@@ -90,7 +90,7 @@
 //                   child: Container(
 //                     decoration: BoxDecoration(
 //                       shape: BoxShape.circle,
-//                       color: theme.colorScheme.background,
+//                       color: theme.colorScheme.surface,
 //                     ),
 //                     child: Icon(
 //                       Icons.remove_circle_outline_outlined,
@@ -115,7 +115,7 @@
 //                   child: Container(
 //                     decoration: BoxDecoration(
 //                       shape: BoxShape.circle,
-//                       color: theme.colorScheme.background,
+//                       color: theme.colorScheme.surface,
 //                     ),
 //                     child: Icon(
 //                       Icons.add_circle_outline_outlined,

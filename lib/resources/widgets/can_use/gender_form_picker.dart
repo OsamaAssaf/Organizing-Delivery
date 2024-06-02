@@ -149,7 +149,7 @@
 //         alignment: Alignment.center,
 //         padding: const EdgeInsets.all(4.0),
 //         decoration: BoxDecoration(
-//           color: theme.colorScheme.background,
+//           color: theme.colorScheme.surface,
 //           borderRadius: BorderRadius.circular(8.0),
 //           border: Border.all(
 //             color: color,

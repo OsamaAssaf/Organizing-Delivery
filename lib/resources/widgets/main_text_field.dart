@@ -69,7 +69,7 @@ class MainTextField extends StatelessWidget {
           color: customTheme.black,
         ),
         decoration: InputDecoration(
-          fillColor: theme.colorScheme.background,
+          fillColor: theme.colorScheme.surface,
           filled: true,
           labelText: label,
           labelStyle: TextStyle(

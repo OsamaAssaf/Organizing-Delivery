@@ -31,7 +31,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return AppBar(
-//       backgroundColor: theme.colorScheme.background,
+//       backgroundColor: theme.colorScheme.surface,
 //       foregroundColor: theme.colorScheme.primary,
 //       elevation: 0.0,
 //       scrolledUnderElevation: 0.0,
