@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCtMlgYHkynbZJVEvUudsyZDUAxHWT6e2E',
-    appId: '1:874866684561:android:182b0635560b4a8deb4530',
+    appId: '1:874866684561:android:846d3327ce985ac8eb4530',
     messagingSenderId: '874866684561',
     projectId: 'organizing-delivery',
     storageBucket: 'organizing-delivery.appspot.com',
@@ -59,10 +59,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDEXhZkxIqO4vPYXangNPtwyKLdWfoKISw',
-    appId: '1:874866684561:ios:d4b547cc48d56801eb4530',
+    appId: '1:874866684561:ios:6e0320a84a5016c4eb4530',
     messagingSenderId: '874866684561',
     projectId: 'organizing-delivery',
     storageBucket: 'organizing-delivery.appspot.com',
-    iosBundleId: 'com.example.startUpWorkspace',
+    iosBundleId: 'com.assaf.OrganizingDelivery',
   );
+
 }

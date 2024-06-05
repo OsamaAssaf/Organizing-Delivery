@@ -1,6 +1,6 @@
 // import 'package:rive/rive.dart';
-// import 'package:start_up_workspace/models/nav_item_model.dart';
-// import 'package:start_up_workspace/resources/helpers/all_imports.dart';
+// import 'package:organizing_delivery/models/nav_item_model.dart';
+// import 'package:organizing_delivery/resources/helpers/all_imports.dart';
 //
 // import '../../models/rive_model.dart';
 //

@@ -10,10 +10,18 @@ class RestaurantsApi extends RestaurantsRepository {
 
   @override
   Future<void> deleteRestaurant(String restaurantId) async {
-    await FirebaseFirestore.instance
-        .collection('restaurants')
-        .doc(restaurantId)
-        .delete();
+    await Future.wait(
+      [
+        FirebaseFirestore.instance
+            .collection('restaurants')
+            .doc(restaurantId)
+            .delete(),
+        FirebaseFirestore.instance
+            .collection('restaurant_status')
+            .doc(restaurantId)
+            .delete()
+      ],
+    );
   }
 
   @override

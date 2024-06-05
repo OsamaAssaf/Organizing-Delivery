@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:874866684561:android:182b0635560b4a8deb4530",
+        "mobilesdk_app_id": "1:874866684561:android:846d3327ce985ac8eb4530",
         "android_client_info": {
-          "package_name": "com.example.start_up_workspace"
+          "package_name": "com.assaf.OrganizingDelivery"
         }
       },
       "oauth_client": [],
