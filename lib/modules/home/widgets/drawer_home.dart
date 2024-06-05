@@ -12,140 +12,40 @@ class DrawerHome extends StatelessWidget {
       child: Drawer(
         surfaceTintColor: Colors.transparent,
         backgroundColor: theme.colorScheme.surface,
-        width: 260.0,
+        // width: 260.0,
         child: SingleChildScrollView(
           child: Column(
             children: [
-              UserAccountsDrawerHeader(
-                arrowColor: theme.colorScheme.surface,
+              DrawerHeader(
                 decoration: BoxDecoration(
                   color: theme.colorScheme.primary,
                 ),
-                margin: const EdgeInsets.all(0.0),
-                accountName: GestureDetector(
-                  onTap: () {
-                    // Get.toNamed(Routes.profileRoute);
-                  },
-                  child: Text(
-                    'User Name',
-                    style: theme.textTheme.titleLarge!.copyWith(
-                      color: theme.colorScheme.surface,
+                child: Row(
+                  children: [
+                    ScaleText(
+                      localizations.organizingDelivery,
                     ),
-                  ),
-                ),
-                accountEmail: GestureDetector(
-                  onTap: () {
-                    // Get.toNamed(Routes.profileRoute);
-                  },
-                  child: Text(
-                    'user@example.com',
-                    style: theme.textTheme.titleMedium!.copyWith(
-                      color: theme.colorScheme.surface,
-                    ),
-                  ),
-                ),
-                currentAccountPicture: GestureDetector(
-                  onTap: () {
-                    // Get.toNamed(Routes.profileRoute);
-                  },
-                  child: CircleAvatar(
-                    radius: 35,
-                    backgroundColor: theme.colorScheme.surface,
-                    child: CircleAvatar(
-                      backgroundColor: theme.colorScheme.primary,
-                      radius: 34,
-                      child: Image.asset(
-                        IconsManager.appIcon,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
+                  ],
                 ),
               ),
               ListTile(
-                title: Text(
-                  localizations.aboutUs,
+                title: ScaleText(
+                  localizations.addRestaurant,
                   style: theme.textTheme.titleLarge!.copyWith(
                     color: customTheme.black,
                     fontWeight: FontWeight.normal,
                   ),
                 ),
                 leading: Icon(
-                  Icons.people_alt_outlined,
+                  Icons.add,
                   color: customTheme.black,
                 ),
                 onTap: () {
-                  showAboutDialog(
-                    context: context,
-                    applicationVersion: packageInfo.version,
-                    applicationIcon: Image.asset(
-                      IconsManager.appIcon,
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                  );
+                  Get.toNamed(Routes.addRestaurantRoute);
                 },
               ),
               ListTile(
-                title: Text(
-                  localizations.rateApp,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.star_border_rounded,
-                  color: customTheme.black,
-                ),
-                onTap: rateApp,
-              ),
-              ListTile(
-                title: Text(
-                  localizations.inviteFriend,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.share_outlined,
-                  color: customTheme.black,
-                ),
-                onTap: shareApp,
-              ),
-              ListTile(
-                title: Text(
-                  localizations.feedback,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.feedback_outlined,
-                  color: customTheme.black,
-                ),
-                onTap: () {
-                  sendFeedback(context);
-                },
-              ),
-              ListTile(
-                title: Text(
-                  localizations.termsAndConditions,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.privacy_tip_outlined,
-                  color: customTheme.black,
-                ),
-                onTap: openTermsAndConditions,
-              ),
-              ListTile(
-                title: Text(
+                title: ScaleText(
                   localizations.settings,
                   style: theme.textTheme.titleLarge!.copyWith(
                     color: customTheme.black,
@@ -158,22 +58,6 @@ class DrawerHome extends StatelessWidget {
                 ),
                 onTap: () {
                   Get.toNamed(Routes.settingsRoute);
-                },
-              ),
-              ListTile(
-                title: Text(
-                  localizations.logOut,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.logout_outlined,
-                  color: customTheme.black,
-                ),
-                onTap: () {
-                  logoutDialog(context);
                 },
               ),
             ],
@@ -226,7 +110,7 @@ class DrawerHome extends StatelessWidget {
         children: [
           const SizedBox(height: 8.0),
           Center(
-            child: Text(
+            child: ScaleText(
               localizations.sendYourFeedback,
               style: theme.textTheme.titleLarge!.copyWith(
                 color: customTheme.black,
@@ -252,7 +136,7 @@ class DrawerHome extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          child: Text(localizations.cancel),
+          child: ScaleText(localizations.cancel),
         ),
         OutlinedButton(
           style: OutlinedButton.styleFrom(
@@ -264,7 +148,7 @@ class DrawerHome extends StatelessWidget {
               width: 1.0,
             ),
           ),
-          child: Text(
+          child: ScaleText(
             localizations.send,
             style: theme.textTheme.titleLarge,
           ),

@@ -14,7 +14,42 @@ class SettingsView extends StatelessWidget {
       ),
       body: ListView(
         physics: const ClampingScrollPhysics(),
-        children: const [],
+        children: [
+          GetBuilder<LanguageController>(
+            builder: (languageController) {
+              return SettingsItem(
+                title: localizations.language,
+                subtitle: languageController.selectedLanguageLabel,
+                icon: Icons.language,
+                onTap: () {
+                  Components().bottomSheet(
+                    context: context,
+                    child: GetBuilder<LanguageController>(
+                        builder: (languageController) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: languageController.languageList.map((e) {
+                          return RadioListTile.adaptive(
+                            value: e.code,
+                            title: ScaleText(
+                              e.name,
+                              style: theme.textTheme.titleLarge,
+                            ),
+                            groupValue: languageController.selectedLanguageCode,
+                            onChanged: (String? value) {
+                              languageController.changeLanguage(value!);
+                              Get.back();
+                            },
+                          );
+                        }).toList(),
+                      );
+                    }),
+                  );
+                },
+              );
+            },
+          ),
+        ],
       ),
     );
   }

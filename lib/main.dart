@@ -1,7 +1,8 @@
 import 'resources/helpers/all_imports.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
+    GlobalKey<ScaffoldMessengerState>();
 
 late AppLocalizations localizations;
 late ThemeData theme;
@@ -12,8 +13,7 @@ late PackageInfo packageInfo;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  /// TODO: remove the comment when config Firebase
-  // await FirebaseService().init();
+  await FirebaseService().init();
   // FirebaseService().initCrashlytics();
   await Future.wait(
     [
@@ -46,6 +46,8 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+  final LanguageController languageController = Get.put(LanguageController());
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -56,7 +58,7 @@ class _MyAppState extends State<MyApp> {
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale(SharedPrefsService().getLanguage()),
+      locale: languageController.getLocale(),
       theme: ThemeManager.getLightTheme(),
       // darkTheme: ThemeManager.getDarkTheme(),
       themeMode: SharedPrefsService().getThemeMode(),
@@ -65,6 +67,7 @@ class _MyAppState extends State<MyApp> {
       builder: (BuildContext context, Widget? child) {
         theme = Theme.of(context);
         customTheme = theme.extension<CustomThemeData>()!;
+        languageController.initLanguageList();
         return LoadingPlus(
           loadingWidget: Components().customLoadingItem(),
           child: child!,

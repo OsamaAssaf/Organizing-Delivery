@@ -115,9 +115,10 @@ class Components {
   }) {
     return SystemUiOverlayStyle(
       statusBarColor: statusBarColor ?? theme.colorScheme.primary,
-      statusBarBrightness: statusBarBrightness ?? (isDark() ? Brightness.dark : Brightness.light),
-      statusBarIconBrightness:
-          statusBarIconBrightness ?? (isDark() ? Brightness.dark : Brightness.light),
+      statusBarBrightness: statusBarBrightness ??
+          (isDark() ? Brightness.dark : Brightness.light),
+      statusBarIconBrightness: statusBarIconBrightness ??
+          (isDark() ? Brightness.dark : Brightness.light),
     );
   }
 
@@ -153,7 +154,8 @@ class Components {
   //   return croppedFile;
   // }
 
-  Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
+  Future<TimeOfDay?> timePicker(BuildContext context,
+      {TimeOfDay? initialTime}) async {
     final TimeOfDay? time = await showTimePicker(
       context: context,
       initialTime: initialTime ?? const TimeOfDay(hour: 8, minute: 0),
@@ -248,6 +250,55 @@ class Components {
 //   }
 //   return '$countryCode$phoneWithoutZero';
 // }
+
+  void bottomSheet({
+    required BuildContext context,
+    required Widget child,
+  }) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext ctx) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.surface,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: child,
+              ),
+              const SizedBox(height: 16.0),
+              InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                borderRadius: BorderRadius.circular(8.0),
+                child: Ink(
+                  height: 60.0,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.surface,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Center(
+                    child: ScaleText(
+                      localizations.cancel,
+                      style: theme.textTheme.titleMedium!.copyWith(
+                        color: customTheme.error,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
 
 enum SnackBarStatus {

@@ -13,7 +13,8 @@ class SharedPrefsService {
 
   Future<void> saveUserModel(UserModel value) async {
     final String userData = jsonEncode(value.toJson());
-    final String encryptedUserData = await EncryptionService().encrypt(userData);
+    final String encryptedUserData =
+        await EncryptionService().encrypt(userData);
     await sharedPreferences.setString(
       DotenvManager.userModelPrefsKey,
       encryptedUserData,
@@ -21,9 +22,11 @@ class SharedPrefsService {
   }
 
   Future<UserModel?> getUserModel() async {
-    final String? encryptedUserData = sharedPreferences.getString(DotenvManager.userModelPrefsKey);
+    final String? encryptedUserData =
+        sharedPreferences.getString(DotenvManager.userModelPrefsKey);
     if (encryptedUserData == null) return null;
-    final String userData = await EncryptionService().decrypt(encryptedUserData);
+    final String userData =
+        await EncryptionService().decrypt(encryptedUserData);
     return UserModel.fromJson(
       jsonDecode(userData),
     );
@@ -33,9 +36,8 @@ class SharedPrefsService {
     await sharedPreferences.setString(DotenvManager.languagePrefsKey, value);
   }
 
-  String getLanguage() {
-    return sharedPreferences.getString(DotenvManager.languagePrefsKey) ??
-        ConstantsManager.arabicLangValue;
+  String? getLanguage() {
+    return sharedPreferences.getString(DotenvManager.languagePrefsKey);
   }
 
   Future<void> saveThemeMode(ThemeMode themeMode) async {
@@ -50,7 +52,8 @@ class SharedPrefsService {
   }
 
   ThemeMode getThemeMode() {
-    final String? mode = sharedPreferences.getString(DotenvManager.themeModePrefsKey);
+    final String? mode =
+        sharedPreferences.getString(DotenvManager.themeModePrefsKey);
     return mode == ThemeMode.dark.toString()
         ? ThemeMode.dark
         : mode == ThemeMode.light.toString()

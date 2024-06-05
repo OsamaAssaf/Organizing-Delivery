@@ -8,6 +8,8 @@ class Routes {
   static const String homeRoute = '/HomeView';
   static const String connectionErrorRoute = '/ConnectionErrorView';
   static const String settingsRoute = '/SettingsView';
+  static const String addRestaurantRoute = '/AddRestaurantView';
+  static const String restaurantDetailsRoute = '/RestaurantDetailsView';
 }
 
 class RouteGenerator {
@@ -41,6 +43,16 @@ class RouteGenerator {
         name: Routes.settingsRoute,
         page: () => SettingsView(),
         binding: SettingsBinding(),
+      ),
+      GetPage(
+        name: Routes.addRestaurantRoute,
+        page: () => const AddRestaurantView(),
+        binding: AddRestaurantBinding(),
+      ),
+      GetPage(
+        name: Routes.restaurantDetailsRoute,
+        page: () => const RestaurantDetailsView(),
+        binding: RestaurantDetailsBinding(),
       ),
     ];
   }

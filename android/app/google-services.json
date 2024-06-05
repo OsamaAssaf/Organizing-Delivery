@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874866684561",
+    "project_id": "organizing-delivery",
+    "storage_bucket": "organizing-delivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874866684561:android:182b0635560b4a8deb4530",
+        "android_client_info": {
+          "package_name": "com.example.start_up_workspace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtMlgYHkynbZJVEvUudsyZDUAxHWT6e2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
